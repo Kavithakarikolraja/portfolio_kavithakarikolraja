@@ -295,7 +295,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                     </h3>
                     <p className="text-xs text-blue-400 italic">Figma</p>
                     <ul className="list-disc list-inside text-xs text-gray-300 space-y-1 mt-1 pl-2 leading-relaxed">
-                      <li>Designed a mobile food ordering application with user-centered navigation and checkout workflow.</li>
+                      <li>Designed a mobile donut ordering application with user-centered navigation and checkout workflow.</li>
                       <li>Developed a gaming dashboard emphasizing responsive layouts, typography hierarchy, and modern interface design.</li>
                     </ul>
                   </div>

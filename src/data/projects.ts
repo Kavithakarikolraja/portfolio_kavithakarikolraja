@@ -64,12 +64,12 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: "food-app",
-    title: "Food Ordering Mobile App",
+    id: "donut-ui",
+    title: "Donut Ordering UI",
     category: "UI/UX",
-    description: "Designed a modern food delivery application with intuitive navigation, user-centered ordering flow, interactive prototypes, seamless checkout experience, and responsive mobile-first layouts.",
+    description: "Designed a modern donut ordering application with intuitive navigation, user-centered ordering flow, interactive prototypes, seamless checkout experience, and responsive mobile-first layouts.",
     techStack: ["Figma", "Wireframing", "User Research", "Prototyping", "Design System"],
-    image: "/projects/foodapp.jpg",
+    image: "/projects/donutapp.jpg",
     githubRepo: "#",
     liveDemo: "https://www.figma.com/proto/jOt2vC2etD14Pv4rXo86Uw/donut?node-id=1-2&t=TTKLVXfUKs7sRKpQ-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
     featured: false,
