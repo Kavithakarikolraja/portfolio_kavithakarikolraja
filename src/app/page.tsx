@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
@@ -14,8 +14,11 @@ import CustomCursor from "@/components/ui/CustomCursor";
 import ParticlesBackground from "@/components/ui/ParticlesBackground";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import ResumeModal from "@/components/ui/ResumeModal";
 
 export default function Home() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
+
   return (
     <>
       {/* Premium preloader loading screen */}
@@ -32,7 +35,7 @@ export default function Home() {
       
       {/* Main website page container */}
       <div className="relative min-h-screen z-20 overflow-hidden">
-        <Navbar />
+        <Navbar onOpenResume={() => setIsResumeOpen(true)} />
         
         <main className="relative">
           <Hero />
@@ -47,6 +50,8 @@ export default function Home() {
         
         <Footer />
       </div>
+
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </>
   );
 }

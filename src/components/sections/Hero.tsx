@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Code, ArrowRight, Download } from "lucide-react";
 import Magnetic from "@/components/ui/Magnetic";
 
 // Dynamically import ThreeDCanvas to prevent SSR/hydration issues
@@ -112,7 +112,6 @@ export default function Hero() {
             <Typewriter />
           </div>
 
-          {/* Call to Actions */}
           <div className="flex flex-wrap gap-4 mb-10">
             <Magnetic range={20}>
               <button
@@ -121,6 +120,16 @@ export default function Hero() {
               >
                 View Projects <ArrowRight className="h-4 w-4" />
               </button>
+            </Magnetic>
+
+            <Magnetic range={20}>
+              <a
+                href="/Kavitha_Karikolraja_Resume.pdf"
+                download="Kavitha_Karikolraja_Resume.pdf"
+                className="flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white font-bold text-sm tracking-wider uppercase transition-colors hover:border-purple-500/40"
+              >
+                Download Resume <Download className="h-4 w-4" />
+              </a>
             </Magnetic>
 
             <Magnetic range={20}>

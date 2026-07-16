@@ -7,15 +7,12 @@ export default function CustomCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 30, stiffness: 300, mass: 0.6 };
+  const springConfig = { damping: 28, stiffness: 380, mass: 0.4 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-  const dotXSpring = useSpring(cursorX, { damping: 20, stiffness: 200 });
-  const dotYSpring = useSpring(cursorY, { damping: 20, stiffness: 200 });
-
-  const dotX = useTransform(dotXSpring, (x) => x + 12);
-  const dotY = useTransform(dotYSpring, (y) => y + 12);
+  const dotX = useTransform(cursorX, (x) => x + 12);
+  const dotY = useTransform(cursorY, (y) => y + 12);
 
   useEffect(() => {
     setMounted(true);

@@ -15,7 +15,11 @@ const navItems = [
   { name: "Contact", id: "contact" }
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  onOpenResume?: () => void;
+}
+
+export default function Navbar({ onOpenResume }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -98,12 +102,20 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden lg:block">
+        {/* CTA Buttons */}
+        <div className="hidden lg:flex items-center gap-3">
+          <Magnetic range={30} strength={0.3}>
+            <button
+              onClick={onOpenResume}
+              className="flex items-center gap-1 px-4 py-2 rounded-full border border-white/10 text-xs font-bold tracking-wider uppercase bg-white/5 hover:bg-white/10 text-white transition-all hover:border-purple-500/40"
+            >
+              Resume <ArrowUpRight className="h-3.5 w-3.5" />
+            </button>
+          </Magnetic>
           <Magnetic range={30} strength={0.3}>
             <button
               onClick={() => scrollToSection("contact")}
-              className="flex items-center gap-1 px-4 py-2 rounded-full border border-white/10 text-xs font-bold tracking-wider uppercase bg-white/5 hover:bg-white/10 text-white transition-all hover:border-purple-500/40"
+              className="flex items-center gap-1 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-xs font-bold tracking-wider uppercase text-white hover:opacity-90 transition-all shadow-md shadow-purple-500/10"
             >
               Let&apos;s Connect <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
@@ -143,8 +155,17 @@ export default function Navbar() {
               </button>
             ))}
             <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenResume) onOpenResume();
+              }}
+              className="flex items-center justify-center gap-1 py-3 mt-2 rounded-xl border border-white/10 bg-white/5 text-white font-bold text-center text-xs tracking-wider uppercase"
+            >
+              View Resume <ArrowUpRight className="h-3.5 w-3.5" />
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
-              className="flex items-center justify-center gap-1 py-3 mt-2 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-center text-xs tracking-wider uppercase shadow-lg shadow-purple-500/10"
+              className="flex items-center justify-center gap-1 py-3 mt-1 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-center text-xs tracking-wider uppercase shadow-lg shadow-purple-500/10"
             >
               Let&apos;s Connect <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
